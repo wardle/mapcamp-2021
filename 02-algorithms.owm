@@ -71,7 +71,7 @@ Trust->Engagement
 ////////////////////////////////////
 component Semantic interoperability [0.56, 0.44] label [37, -11]
 component Open standards [0.39, 0.46] label [5, -10]
-component Collaboration [0.36, 0.54] label [-20, 25]
+component Collaboration [0.36, 0.54] label [14, 13]
 Clinically meaningful data->Semantic interoperability
 Semantic interoperability->Open standards
 Open standards->Collaboration
@@ -112,7 +112,7 @@ Implementation->Data flow and store
 //note Software libraries and services [0.05, 0.34]
 note -> Software libraries and services -> [0.07, 0.36]
 evolve Implementation 0.7
-evolve Control 0.46
+evolve Control 0.62
 note <<Proprietary>> [0.07, 0.22] 
 note <<Open source>> [0.07, 0.65]
 //
