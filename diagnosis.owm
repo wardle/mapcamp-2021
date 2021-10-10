@@ -1,0 +1,118 @@
+title Clinical decision-making
+style wardley
+
+////////////////////////////////////////
+// most unintentionally designed
+// evolved organically
+// We start with a situation of uncertainty
+// How to reduce the uncertainty around
+// our decision making?
+////////////////////////////////////////
+anchor Professional [0.95, 0.43]
+anchor Patient [0.95, 0.6]
+component Clinical decision [0.90, 0.57] label [14, -13]
+component Diagnosis [0.82, 0.44] label [-70, -9]
+Clinical decision->Diagnosis
+note Possible / probable / definite [0.87, 0.22]
+Professional->Clinical decision
+Patient->Clinical decision
+note Are you going to have a knee replacement? [0.93, 0.65]
+note Are we using xx in this patient with COVID-19? [0.93, 0.01]
+note <<Reducing uncertainty around decision-making>> [0.84, 0.61]
+
+
+///////////////////////////////////////
+// What do we need for decisions?
+///////////////////////////////////////
+//note Situational awareness [0.75, 0.36]
+//component Pattern matching [0.75, 0.73] label [14, -23]
+//component Probability (priors) [0.75, 0.29] label [-61, -39]
+//note Bayesian inference [0.82, 0.17]
+//Diagnosis->Pattern matching
+//Diagnosis->Probability (priors)
+
+///////////////////////////////////////
+// The standard diagnostic process 
+// Evolved. Taught at medical school
+// Gained through experience.
+///////////////////////////////////////
+//component Symptoms [0.62, 0.73] label [-52, 30]
+//component Signs [0.63, 0.85] label [7, -6]
+//component Investigations [0.59, 0.79] label [12, 14]
+//Pattern matching->Symptoms
+//Pattern matching->Signs
+//Pattern matching->Investigations
+//component Clinical skills [0.44, 0.81]
+//component Training [0.25, 0.86]
+//Symptoms->Clinical skills
+//Investigations->Clinical skills
+//Signs->Clinical skills
+//Clinical skills->Training
+
+///////////////////////////////////////
+// Learning through doing - the need
+// for feedback
+// e.g. response to treatment
+///////////////////////////////////////
+//component Feedback [0.59, 0.38] label [21, 2]
+//Diagnosis->Feedback
+//Pattern matching->Feedback
+//Probability (priors)->Feedback
+//note Iteration [0.64, 0.36]
+//note Feedback for individual care [0.67, 0.02]
+//note Feedback for cohorts (e.g. a service) [0.64, 0.02]
+//note Feedback for advancing science [0.61, 0.02]
+//note Continuous learning [0.56, 0.44]
+
+
+///////////////////////////////////////
+// What does our feedback depend upon?
+// Continuity - example
+// Outcomes - measurement and making sense
+///////////////////////////////////////
+//component Continuity [0.5, 0.54] label [18, 4]
+//component Outcomes [0.5, 0.10] label [-36, -15]
+//component Data sharing [0.42, 0.13] label [-98, 12]
+//Outcomes->Data sharing
+//component Making sense [0.35, 0.13] label [-81, 22]
+//note in context [0.29, 0.04]
+//Outcomes->Making sense
+//component Meaningful data [0.3, 0.36] label [31, -13]
+//Making sense->Meaningful data
+//note Value [0.30, 0.21]
+//Feedback->Continuity
+//Feedback->Outcomes
+//Clinical decision->Feedback
+//note << A learning health system >> [0.01, 0.03]
+//note << A factory-model of health and care >> [0.01, 0.66]
+//component Teams [0.24, 0.63]
+//Continuity->Teams
+//Continuity->Data sharing
+//Data sharing->Meaningful data
+//Feedback->Meaningful data
+
+
+////////////////////////////////////
+// and what supports the capture and 
+// use of meaningful data?
+////////////////////////////////////
+//component Data standards [0.23, 0.46]
+//Meaningful data->Data standards
+//component Implementation [0.18, 0.15] label [-89, -15]
+//Data standards->Implementation
+//component Data store/pipe [0.12, 0.38] label [-81, -3]
+//Implementation->Data store/pipe
+//component Compute [0.06, 0.38] label [-73, 6]
+//Data store/pipe->Compute
+
+//////////////////////////////////////
+// And that doesn't make sense
+// Why are we building our own implementations
+// Why are we building our own data centres?
+//////////////////////////////////////
+//evolve Outcomes 0.25 label [24, 8]
+//evolve Making sense 0.35
+//evolve Compute 0.9
+//evolve Data store/pipe 0.80 label [27, -22]
+//evolve Implementation 0.68 label [26, -12]
+
