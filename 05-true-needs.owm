@@ -1,0 +1,121 @@
+title Start with user needs
+style wardley
+
+anchor Researchers [0.94, 0.18]
+anchor Managers [0.94, 0.31]
+anchor Policy makers [0.94, 0.43]
+anchor Clinicians [0.94, 0.56]
+anchor Patients [0.94, 0.66]
+
+component Decisions [0.90, 0.37] label [31, 8]
+component Evidence [0.84, 0.19] label [-69, 5]
+component Communication [0.84, 0.29] label [11, 4]
+component Take action [0.84, 0.48] label [11, 3]
+Researchers->Decisions
+Managers->Decisions
+Policy makers->Decisions
+Clinicians->Decisions
+Patients->Decisions
+Decisions->Evidence
+Decisions->Communication
+Decisions->Take action
+note Is this new treatment effective and safe? [0.90, 0.64]
+note Does this service change improve our outcomes? [0.88, 0.64]
+note Should we use this high-risk treatment? [0.86, 0.64]
+note When should this patient be seen? [0.84, 0.64]
+note Can I be sent home? What is the treatment? [0.82, 0.64]
+note How can we address inequality? [0.92, 0.64]
+
+
+component Decision support [0.78, 0.11] label [-72, -10]
+Evidence->Decision support
+component Meaningful data [0.72, 0.46] label [18, -20]
+Decision support->Meaningful data
+Evidence->Meaningful data
+component Knowledge bases [0.45, 0.76] label [-26, 13]
+Meaningful data->Knowledge bases
+
+component Outcomes [0.67, 0.36] label [-55, 20]
+component Distributed data [0.59, 0.38] label [26, -21]
+Outcomes->Distributed data
+
+component Trust [0.33, 0.48] label [-55, -8]
+component Openness [0.24, 0.37] label [-69, -5]
+component Transparency [0.13, 0.48] label [-28, 23]
+Distributed data->Trust
+Trust->Openness
+Trust->Transparency
+Trust->Collaboration
+component Distributed Communication [0.37, 0.09] label [29, 0]
+Distributed data->Distributed Communication
+Trust->Open standards
+component Low-code/ no-code [0.54, 0.05] label [-35, 10]
+Decision support->Low-code/ no-code
+
+note Right information at the right time [0.86, 0.01]
+note Universally accessible and useful [0.88, 0.01]
+
+Meaningful data->Outcomes
+component Workflow [0.70, 0.25] label [16, 3]
+component Process management [0.65, 0.21] label [-75, -27]
+Workflow->Process management
+Take action->Workflow
+Take action->Real-time/flow analytics
+Real-time/flow analytics+<>Distributed data
+Process management->Distributed Communication
+Distributed data->Open standards
+component Finely-grained authentication [0.34, 0.27] label [-19, 14]
+Distributed data->Finely-grained authentication
+Real-time/flow analytics->Finely-grained authentication
+component Rules engines [0.49, 0.64] label [-39, 18]
+Meaningful data->Rules engines
+Real-time/flow analytics->Rules engines
+//Decision support->Trust
+
+//Decision support->Meaningful data
+
+component Reference data [0.35, 0.73] label [-17, 29]
+Reference data->Organisation data
+Reference data->Geographic data
+Reference data->Terminology services
+Distributed data->Reference data
+
+component Open standards [0.23, 0.59] label [-20, 23]
+component Homomorphic encryption [0.09, 0.04] label [-19, 21]
+Distributed control->Homomorphic encryption
+component Resource location [0.43, 0.25] label [-62, 5]
+component Collaboration [0.15, 0.41] label [-92, -16]
+component Secure enclaves [0.10, 0.13]
+component Distributed control [0.27, 0.06] label [30, -1]
+Distributed Communication->Distributed control
+Distributed control->Privacy-enhancing technology
+Privacy-enhancing technology->Secure enclaves
+Distributed data->Resource location
+component Data [0.13, 0.88] label [23, -10]
+component Real-time/flow analytics [0.66, 0.77] label [45, -4]
+component Privacy-enhancing technology [0.19, 0.11] label [37, -13]
+
+//Results->Laboratory
+//Results->Radiology
+//Open standards->Collaboration
+//Workflow->Scheduling
+//Scheduling->Process management
+//Scheduling->Pathway management
+//
+note Data sharing [0.64, 0.38]
+
+component Compute [0.04, 0.92]
+Data->Compute
+Reference data->Data
+Real-time/flow analytics->Data
+Rules engines->Data
+component Clinical data [0.33, 0.59] label [-10, -11]
+Distributed data->Clinical data
+Clinical data->Data
+Clinical data->Open standards
+Meaningful data->Distributed data
+Knowledge bases->Data
+Take action->Meaningful data
+note Feedback loop on decisions [0.73, 0.57]
+Trust->Finely-grained authentication
+Process management->Low-code/ no-code
