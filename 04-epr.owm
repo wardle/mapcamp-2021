@@ -18,23 +18,10 @@ EHR->Identity
 Identity->Staff identity
 Identity->Patient identity
 
-//Meaningful data->Patient identity
-//Meaningful data->Staff identity
-//Meaningful data->Data sharing
-//component Consent/control [0.52, 0.10] label [36, -1]
-//Data sharing->Consent/control
-
-//component Federated clinical data [0.56, 0.16] label [0, -53]
-//Data sharing->Federated clinical data
-
-
 component Terminology services [0.33, 0.69] label [25, -10]
 component Geographic data [0.46, 0.88] label [7, -32]
 Staff identity->Geographic data
-//component Geographic data [0.46, 0.88] label [14, -14]
 component Audit/log [0.47, 0.77] label [12, 20]
-//Consent/control->Audit/log
-
 
 component Scheduling [0.73, 0.25] label [-86, 5]
 component Documents [0.44, 0.52] label [-5, -11]
@@ -91,93 +78,11 @@ Laboratory->Open standards
 note HL7 [0.28, 0.51]
 Documents->Open standards
 note IHE-XDS [0.39, 0.51]
-
-//component Distributed Communication
-//component Meaningful data [0.75, 0.36] label [-30, -35]
-//
-//component Decision [0.86, 0.35] label [23, 14]
-//Researchers->Decision
-//Managers->Decision
-//Clinicians->Decision
-//Patient->Decision
-//note Is this new treatment effective and safe? [0.86, 0.56]
-//note Does this service change improve our outcomes? [0.83, 0.56]
-//note Should we use this high-risk treatment? [0.80, 0.56]
-//note When should this patient be seen? [0.77, 0.56]
-//note Can I be sent home? What is the treatment? [0.74, 0.56]
-//
-//component Decision support [0.78, 0.17] label [-72, -13]
-//Decision->Decision support
-//
-//note Right information at the right time [0.85, 0.01]
-//note Universally accessible and useful [0.83, 0.01]
-//component Trust [0.47, 0.24]
-//component Openness [0.37, 0.14] label [-69, -5]
-//component Transparency [0.30, 0.10] label [-71, -22]
-//Decision support->Trust
-//Trust->Openness
-//Trust->Transparency
-
-//Decision support->Meaningful data
-//component Open standards [0.20, 0.43] label [14, -4]
-//component Outcomes [0.58, 0.11]
-
-
-//anchor Researchers [0.94, 0.18]
-//anchor Managers [0.94, 0.31]
-//anchor Clinicians [0.94, 0.45]
-//anchor Patient [0.94, 0.63]
-
-
-//component Distributed communication [0.49, 0.27]
-//component Resource location [0.51, 0.24]
-//component Collaboration [0.19, 0.36]
-//component Secure enclaves [0.50, 0.11]
-//component Distributed control [0.44, 0.04] label [20, 2]
-//component Identification and recruitment [0.76, 0.12] label [-78, -28]
-component Data store/pipe [0.15, 0.88] label [23, -10]
+component Data store/pipe [0.09, 0.90] label [23, -10]
 component Pathway management [0.74, 0.04] label [20, -4]
 component Process management [0.49, 0.21] label [5, -10]
-//component Real-time/flow analytics [0.21, 0.77] label [45, -4]
-//component Monitoring/post-marketing vigilance [0.27, 0.04]
-//component Regulation [0.10, 0.53]
-//component Low-code/ no-code [0.88, 0.10] label [-65, -29]
-//component Lightweight UI/apps [0.90, 0.41] label [20, -10]
-//component Finely-grained authentication [0.06, 0.13] label [32, -11]
-//component Rules engines [0.72, 0.76]
-//component Privacy-enhancing technology [0.42, 0.23]
-//component Open, secure messaging [0.50, 0.78] label [5, -10]
-//component Homomorphic encryption
-//Reference data services->Organisation data
-//Reference data services->Geographic data
-//Reference data services->Terminology services
-//Results->Laboratory
-//Results->Radiology
-//Open standards->Collaboration
-//Workflow->Scheduling
-//Scheduling->Process management
-//Scheduling->Pathway management
-//
-//Trust->Transparency
-//Trust->Openness
-//Consent/control->Distributed control
-//Real-time/flow analytics->Data store/pipe
-//Decision support->Regulation
-//Meaningful data->Data sharing
-//Meaningful data->Outcomes
-//Researchers->Identification and recruitment
-//Researchers->Low-code/ no-code
-//Managers->Low-code/ no-code
-//Clinicians->Low-code/ no-code
-//Clinicians->Lightweight UI/apps
-//Managers->Lightweight UI/apps
-//Researchers->Lightweight UI/apps
-//Meaningful data->Federated clinical data
-//Federated clinical data->Resource location
-//Data sharing->Secure enclaves
-//Data sharing->Distributed control
 
-
-
-//component Compute [0.06, 0.93]
-//Data store/pipe->Compute
+component Compute [0.03, 0.93]
+evolve Implementation 0.8
+note Open-source [0.11, 0.71]
+Data store/pipe->Compute
