@@ -34,6 +34,7 @@ component Patient portal [0.78, 0.56] label [23, -6]
 Organisation->Patient portal
 Patient->Patient portal
 Patient portal->Electronic health record
+note User is not the customer [0.97, 0.10]
 
 ////////////////////////////////////
 // An organisation decides they want
@@ -41,13 +42,12 @@ Patient portal->Electronic health record
 // compatible analytics product for
 // their EPR.
 ////////////////////////////////////
-component Population health analytics [0.70, 0.57] label [43, -28]
-Organisation->Population health analytics
-Population health analytics->Electronic health record
-
-component Data analysis [0.61, 0.75]
-Population health analytics->Data analysis
-Data analysis->Data services
+//component Population health analytics [0.70, 0.57] label [43, -28]
+//Organisation->Population health analytics
+//Population health analytics->Electronic health record
+//component Data analysis [0.61, 0.75]
+//Population health analytics->Data analysis
+//Data analysis->Data services
 
 ////////////////////////////////////
 // The organisation takes part in 
@@ -55,9 +55,9 @@ Data analysis->Data services
 // record exchange, so buy a HIE
 // product from the EPR vendor.
 ////////////////////////////////////
-component Health information exchange [0.62, 0.56] label [28, -15]
-Organisation->Health information exchange
-Health information exchange->Electronic health record
+//component Health information exchange [0.62, 0.56] label [28, -15]
+//Organisation->Health information exchange
+//Health information exchange->Electronic health record
 
 ////////////////////////////////////
 // The organisation needs to customise
@@ -69,14 +69,16 @@ Health information exchange->Electronic health record
 // The EPR isn't dependent on the API
 // The API is dependent on the EPR.
 ////////////////////////////////////
-component In-house development [0.71, 0.29] label [38, -16]
-Organisation->In-house development
-In-house development->API product
-component API product [0.56, 0.56] label [24, 8]
-Organisation->API product
-API product->Electronic health record
-note API dependent on EPR [0.52, 0.55]
-note not EPR dependent on API [0.49, 0.54]
+//component In-house development [0.71, 0.29] label [38, -16]
+//Organisation->In-house development
+//In-house development->API product
+//component API product [0.56, 0.56] label [24, 8]
+//Organisation->API product
+//API product->Electronic health record
+//note API dependent on EPR [0.52, 0.55]
+//note not EPR dependent on API [0.49, 0.54]
+//note "Platform" [0.46, 0.58]
+
 
 ////////////////////////////////////
 // Oh but what about research?
@@ -85,12 +87,12 @@ note not EPR dependent on API [0.49, 0.54]
 // fill in the details of the joint
 // you placed in that patient?
 ////////////////////////////////////
-component Research registry [0.67, 0.19] label [-86, -19]
-Professional->Research registry
-note No 'requirement' on EHR [0.71, 0.04]
-note Entered manually [0.73, 0.05]
-component Reproducible research [0.54, 0.03] label [30, -6]
-Research registry->Reproducible research
+//component Research registry [0.67, 0.19] label [-86, -19]
+//Professional->Research registry
+//note No 'requirement' on EHR [0.71, 0.04]
+//note Entered manually [0.73, 0.05]
+//component Reproducible research [0.54, 0.03] label [30, -6]
+//Research registry->Reproducible research
 
 
 ////////////////////////////////////
@@ -101,15 +103,15 @@ Research registry->Reproducible research
 // an off-the shelf package in order
 // to fit our local workflows.
 ////////////////////////////////////
-component Integration [0.27, 0.26] label [-109, 1]
-Electronic health record->Integration
-note Bespoke, end-to-end [0.29, 0.10]
-component Customisation [0.36, 0.23] label [-104, -9]
-Electronic health record->Customisation
-note e.g. workflows/processes [0.35, 0.03]
-In-house development->Customisation
-In-house development->Integration
-Customisation->Collaboration
+//component Integration [0.27, 0.26] label [-109, 1]
+//Electronic health record->Integration
+//note Bespoke, end-to-end [0.29, 0.10]
+//component Customisation [0.36, 0.23] label [-104, -9]
+//Electronic health record->Customisation
+//note e.g. workflows/processes [0.35, 0.03]
+//In-house development->Customisation
+//In-house development->Integration
+//Customisation->Collaboration
 
 
 ////////////////////////////////////
@@ -121,30 +123,32 @@ Customisation->Collaboration
 // Difficult to change, difficult
 // to evolve and inflexible.
 ////////////////////////////////////
-component Data standards [0.35, 0.43] label [15, -3]
-API product->Data standards
-component Collaboration [0.29, 0.38] label [15, 2]
-Data standards->Collaboration
-component Standards bodies [0.28, 0.54] label [9, -10]
-Data standards->Standards bodies
+//component Data standards [0.35, 0.43] label [15, -3]
+//API product->Data standards
+//component Collaboration [0.29, 0.38] label [15, 2]
+//Data standards->Collaboration
+//component Standards bodies [0.28, 0.54] label [9, -10]
+//Data standards->Standards bodies
 
 ////////////////////////////////////
 // And of course, organisations run
 // their own data centres.
 ////////////////////////////////////
-component Legacy data [0.12, 0.23] label [11, 0]
-component Legacy compute [0.04, 0.23]
-Legacy data->Legacy compute
-Integration->Legacy data
-component Data services [0.16, 0.81]
-component Compute [0.04, 0.90]
-Electronic health record->Data services
-Data services->Compute
-Integration->Data services
+//component Legacy data [0.12, 0.23] label [11, 0]
+//component Legacy compute [0.04, 0.23]
+//Legacy data->Legacy compute
+//Integration->Legacy data
+//component Data services [0.16, 0.81]
+//component Compute [0.04, 0.90]
+//Electronic health record->Data services
+//Data services->Compute
+//Integration->Data services
 
-note How did we go so wrong? [0.91, 0.78]
-note Where is the platform? [0.87, 0.78]
+//note How did we go so wrong? [0.91, 0.78]
+//note Where is the platform? [0.87, 0.78]
+//////////////////////////////////////
+
 ////////////////////////////////////
-////////////////////////////////////
-evolve Legacy data 0.7
-evolve Legacy compute 0.77 label [-17, 19]
+//evolve Legacy data 0.7
+//evolve Legacy compute 0.77 label [-17, 19]
+//evolve API product 0.8
