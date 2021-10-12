@@ -1,12 +1,14 @@
 title Start with user needs
 style wardley
 
+
+////////////////////////////////
+////////////////////////////////
 anchor Researchers [0.94, 0.18]
 anchor Managers [0.94, 0.31]
 anchor Policy makers [0.94, 0.43]
 anchor Clinicians [0.94, 0.56]
 anchor Patients [0.94, 0.66]
-
 component Decisions [0.90, 0.37] label [31, 8]
 component Evidence [0.84, 0.19] label [-69, 5]
 component Communication [0.84, 0.29] label [11, 4]
@@ -19,27 +21,33 @@ Patients->Decisions
 Decisions->Evidence
 Decisions->Communication
 Decisions->Take action
+note How can we address inequality? [0.92, 0.64]
 note Is this new treatment effective and safe? [0.90, 0.64]
 note Does this service change improve our outcomes? [0.88, 0.64]
 note Should we use this high-risk treatment? [0.86, 0.64]
 note When should this patient be seen? [0.84, 0.64]
-note Can I be sent home? What is the treatment? [0.82, 0.64]
-note How can we address inequality? [0.92, 0.64]
+note Can I be sent home? [0.82, 0.64]
+note What is the treatment? [0.80, 0.64]
 
-
+////////////////////////////////
+// So let's focus on decisions
+// We need evidence to reduce the uncertainty
+// for our decision, means of communicating
+////////////////////////////////
 component Decision support [0.78, 0.11] label [-72, -10]
 Evidence->Decision support
 component Meaningful data [0.72, 0.46] label [18, -20]
 Decision support->Meaningful data
 Evidence->Meaningful data
-component Knowledge bases [0.45, 0.76] label [-26, 13]
+component Knowledge bases [0.45, 0.76] label [-67, 10]
 Meaningful data->Knowledge bases
 
-component Outcomes [0.67, 0.36] label [-55, 20]
-component Distributed data [0.59, 0.38] label [26, -21]
+
+component Outcomes [0.58, 0.37] label [13, 4]
+component Distributed data [0.51, 0.25] label [-52, -25]
 Outcomes->Distributed data
 
-component Trust [0.33, 0.48] label [-55, -8]
+component Trust [0.28, 0.47] label [0, -7]
 component Openness [0.24, 0.37] label [-69, -5]
 component Transparency [0.13, 0.48] label [-28, 23]
 Distributed data->Trust
@@ -49,11 +57,11 @@ Trust->Collaboration
 component Distributed Communication [0.37, 0.09] label [29, 0]
 Distributed data->Distributed Communication
 Trust->Open standards
-component Low-code/ no-code [0.54, 0.05] label [-35, 10]
+component Low-code/ no-code [0.58, 0.08] label [-63, -34]
 Decision support->Low-code/ no-code
 
-note Right information at the right time [0.86, 0.01]
-note Universally accessible and useful [0.88, 0.01]
+note Right information at the right time [0.87, 0.01]
+note Universally accessible and useful [0.90, 0.01]
 
 Meaningful data->Outcomes
 component Workflow [0.70, 0.25] label [16, 3]
@@ -64,12 +72,14 @@ Take action->Real-time/flow analytics
 Real-time/flow analytics+<>Distributed data
 Process management->Distributed Communication
 Distributed data->Open standards
-component Finely-grained authentication [0.34, 0.27] label [-19, 14]
+component Finely-grained authentication [0.34, 0.27] label [-24, 14]
 Distributed data->Finely-grained authentication
 Real-time/flow analytics->Finely-grained authentication
-component Rules engines [0.49, 0.64] label [-39, 18]
+component Rules engines [0.49, 0.08] label [-52, 18]
 Meaningful data->Rules engines
-Real-time/flow analytics->Rules engines
+Process management->Rules engines
+Low-code/ no-code->Rules engines
+
 //Decision support->Trust
 
 //Decision support->Meaningful data
@@ -85,13 +95,14 @@ component Homomorphic encryption [0.09, 0.04] label [-19, 21]
 Distributed control->Homomorphic encryption
 component Resource location [0.43, 0.25] label [-62, 5]
 component Collaboration [0.15, 0.41] label [-92, -16]
-component Secure enclaves [0.10, 0.13]
+component Secure enclaves [0.09, 0.11]
+component Differential privacy [0.10, 0.21] label [21, -13]
 component Distributed control [0.27, 0.06] label [30, -1]
 Distributed Communication->Distributed control
 Distributed control->Privacy-enhancing technology
 Privacy-enhancing technology->Secure enclaves
+Privacy-enhancing technology->Differential privacy
 Distributed data->Resource location
-component Data [0.13, 0.88] label [23, -10]
 component Real-time/flow analytics [0.66, 0.77] label [45, -4]
 component Privacy-enhancing technology [0.19, 0.11] label [37, -13]
 
@@ -102,20 +113,28 @@ component Privacy-enhancing technology [0.19, 0.11] label [37, -13]
 //Scheduling->Process management
 //Scheduling->Pathway management
 //
-note Data sharing [0.64, 0.38]
+note Data sharing [0.58, 0.25]
 
-component Compute [0.04, 0.92]
-Data->Compute
-Reference data->Data
-Real-time/flow analytics->Data
-Rules engines->Data
 component Clinical data [0.33, 0.59] label [-10, -11]
 Distributed data->Clinical data
-Clinical data->Data
 Clinical data->Open standards
 Meaningful data->Distributed data
 Knowledge bases->Data
 Take action->Meaningful data
-note Feedback loop on decisions [0.73, 0.57]
+note Feedback loop on decisions [0.68, 0.51]
 Trust->Finely-grained authentication
 Process management->Low-code/ no-code
+
+/////////////////////////////////
+/////////////////////////////////
+component Data [0.13, 0.88] label [12, 4]
+component Compute [0.04, 0.92]
+note Store / pipeline [0.10, 0.86]
+Data->Compute
+Reference data->Data
+Real-time/flow analytics->Data
+Clinical data->Data
+
+note Flexibility/agility [0.71, 0.01]
+note adaptability [0.69, 0.03]
+note Declarative [0.53, 0.01]
