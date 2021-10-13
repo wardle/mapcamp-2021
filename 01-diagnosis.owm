@@ -2,7 +2,7 @@ title Clinical decision-making
 style wardley
 
 ////////////////////////////////////////
-// most unintentionally designed
+// most IT unintentionally designed
 // evolved organically
 // We start with a situation of uncertainty
 // How to reduce the uncertainty around
@@ -52,7 +52,13 @@ note <<Reducing uncertainty around decision-making>> [0.84, 0.61]
 ///////////////////////////////////////
 // Learning through doing - the need
 // for feedback
+// Hypothesis generation and confirmation or refutation.
 // e.g. response to treatment
+// Probe? Measure? Respond?
+// Shouldn't we do this for direct care?
+// Also cohorts - defined
+// Also research
+// Separate at our peril!
 ///////////////////////////////////////
 //component Feedback [0.59, 0.38] label [21, 2]
 //Diagnosis->Feedback
@@ -67,8 +73,13 @@ note <<Reducing uncertainty around decision-making>> [0.84, 0.61]
 
 ///////////////////////////////////////
 // What does our feedback depend upon?
-// Continuity - example
+// Continuity - example - oft neglected
+// -e.g. if focus only on numbers seen
+// you give away continuity. 
+// Whereas focus on outcomes...:
 // Outcomes - measurement and making sense
+// Over on left because new, novel, 
+// e.g joint registries
 ///////////////////////////////////////
 //component Continuity [0.5, 0.54] label [18, 4]
 //component Outcomes [0.5, 0.10] label [-36, -15]
@@ -95,6 +106,9 @@ note <<Reducing uncertainty around decision-making>> [0.84, 0.61]
 ////////////////////////////////////
 // and what supports the capture and 
 // use of meaningful data?
+// need standards, interop semantic
+// widespread implementation - 
+// should be a commodity
 ////////////////////////////////////
 //component Data standards [0.23, 0.46]
 //Meaningful data->Data standards
